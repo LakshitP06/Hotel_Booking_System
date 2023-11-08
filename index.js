@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
 const express = require("express");
-const hotelRoute = require("./controller/hotelRoute");
 const auth = require("./controller/auth");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-
 const app = express();
 
 
