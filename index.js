@@ -4,6 +4,7 @@ const auth = require("./controller/auth");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
+const hotelRoute = require("./controller/hotelRoute");
 
 
 mongoose.set("strictQuery",true);
@@ -16,8 +17,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/auth",auth);
+app.use("/hotelRoute",hotelRoute);
 
-// app.use("/hotelRoute",hotelRoute);
+//server
+
+app.use("/hotelRoute",hotelRoute);
 
 app.listen(4000,()=>{
     console.log("Server connected at 4000");
